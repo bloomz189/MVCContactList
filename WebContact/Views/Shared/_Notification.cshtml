@@ -1,0 +1,19 @@
+﻿
+@if (ViewBag.ProcessState == BLL.General.Notify.InsertSuccess || ViewBag.ProcessState == BLL.General.Notify.UpdateSuccess)
+{
+    <div class="alert alert-success">
+        <strong>Successfully!</strong>
+    </div>
+}
+else if (ViewBag.ProcessState == BLL.General.Notify.UpdateFail)
+{
+    <div class="alert alert-danger">
+        <strong>Fail! Please try again!</strong>
+    </div>
+}
+else if (ViewBag.ProcessState == BLL.General.Notify.EmptyData)
+{
+    <div class="alert alert-danger">
+        <strong>Fail! Please fill the content Area!</strong>
+    </div>
+}

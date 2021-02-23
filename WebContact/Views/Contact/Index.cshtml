@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+@model List<DTO.ContactDTO>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="row">
+        <div>
+            @Html.ActionLink("Create New", "Add", null, new { @class = "btn btn-success" })
+        </div>
+        @Html.Partial("~/Views/Shared/_Notification.cshtml")
+        <table class="table table-responsive">
+            <tr>
+                <th>Company Name</th>
+                <th>Company Address</th>
+                <th>Telephone</th>
+                <th>Contact Person</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyTel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContactPerson)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("View", "View", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

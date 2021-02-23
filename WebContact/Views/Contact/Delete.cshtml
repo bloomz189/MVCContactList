@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="col-xl-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Do you want delete this contact ?</h4>
+                </div>
+                <div class="card-body">
+                    @Html.Partial("Partial/ContactDetail")
+                </div>
+                <div class="card-footer">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </div>
+
+            </div>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    @using (Html.BeginForm("Edit", "Contact", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        <div class="col-xl-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Update contact</h4>
+                </div>
+                <div class="card-body">
+                    @Html.Partial("Partial/ContactDetail")
+                </div>
+                <div class="card-footer">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+                    <button type="submit" class="btn btn-primary">Update</button>
+
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

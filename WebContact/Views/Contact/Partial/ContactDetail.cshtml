@@ -1,0 +1,75 @@
+﻿
+@model DTO.ContactDTO
+
+<div class="col-xl-12 col-lg-12">
+    <div class="card-body">
+        @Html.Partial("~/Views/Shared/_Notification.cshtml")
+        <div class="basic-form">
+            <form action="">
+                <div class="form-group row">
+                    <div class="col-lg-8">
+                        @if (ViewBag.ViewType == "ReadOnly")
+                        {
+                            @Html.DisplayNameFor(x => x.CompanyName)
+                            @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control form-control-hover", @readonly = "readonly" })
+                        }
+                        else
+                        {
+                            @Html.DisplayNameFor(x => x.CompanyName)
+                            @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control form-control-hover", @placeholder = "Company Name" })
+                            @Html.ValidationMessageFor(x => x.CompanyName)
+                        }
+                    </div>
+                    <span class="text-danger">*</span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-8">
+                        @if (ViewBag.ViewType == "ReadOnly")
+                        {
+                            @Html.DisplayNameFor(x => x.CompanyAddress)
+                            @Html.TextBoxFor(x => x.CompanyAddress, new { @class = "form-control form-control-hover", @readonly = "readonly" })
+                        }
+                        else
+                        {
+                            @Html.DisplayNameFor(x => x.CompanyAddress)
+                            @Html.TextBoxFor(x => x.CompanyAddress, new { @class = "form-control form-control-hover", @placeholder = "Company Address" })
+                            @Html.ValidationMessageFor(x => x.CompanyAddress)
+                        }
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-8">
+                        @if (ViewBag.ViewType == "ReadOnly")
+                        {
+                            @Html.DisplayNameFor(x => x.CompanyTel)
+                            @Html.TextBoxFor(x => x.CompanyTel, new { @class = "form-control form-control-hover", @readonly = "readonly" })
+                        }
+                        else
+                        {
+                            @Html.DisplayNameFor(x => x.CompanyTel)
+                            @Html.TextBoxFor(x => x.CompanyTel, new { @class = "form-control form-control-hover", @placeholder = "Company Phone" })
+                            @Html.ValidationMessageFor(x => x.CompanyTel)
+                        }
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-8">
+                        @if (ViewBag.ViewType == "ReadOnly")
+                        {
+                            @Html.DisplayNameFor(x => x.ContactPerson)
+                            @Html.TextBoxFor(x => x.ContactPerson, new { @class = "form-control form-control-hover", @readonly = "readonly" })
+                        }
+                        else
+                        {
+                            @Html.DisplayNameFor(x => x.ContactPerson)
+                            @Html.TextBoxFor(x => x.ContactPerson, new { @class = "form-control form-control-hover", @placeholder = "Contact Person Name" })
+                            @Html.ValidationMessageFor(x => x.ContactPerson)
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!--  end card -->
+</div><!--  end col -->
