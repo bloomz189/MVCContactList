@@ -76,8 +76,7 @@ namespace WebContact.Controllers
             {
                 ViewBag.ProcessState = General.Notify.EmptyData;
             }
-                return View("Edit", model);
-                
+            return View("Edit", model);
         }
 
         public ActionResult View(int id)
@@ -105,6 +104,8 @@ namespace WebContact.Controllers
                 bll.DeleteContact(model);
                 var abc = ModelState;
                 ViewBag.ProcessState = General.Notify.UpdateSuccess;
+                contactLists = bll.GetAlls();
+                return View("Index", contactLists);
             } 
             else
             {
